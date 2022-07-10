@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class StudentViewModel {
-    let studentList: [Student] = [
+final class StudentTableViewModel {
+    var studentList: [Student] = [
         Student(name: "김승민", age: "15"),
         Student(name: "이승민", age: "17")
     ]
