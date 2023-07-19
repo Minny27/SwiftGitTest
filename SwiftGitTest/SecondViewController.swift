@@ -12,9 +12,9 @@ protocol SendingColorDelegate: AnyObject {
 }
 
 class SecondViewController: UIViewController {
-    
+
     weak var delegate: SendingColorDelegate?
-    
+
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "두 번째 화면"
@@ -23,7 +23,7 @@ class SecondViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     let button: UIButton = {
         let button = UIButton()
         button.setTitleColor(.blue, for: .normal)
@@ -40,27 +40,27 @@ class SecondViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
-        
+
+        view.backgroundColor = .yellow
+
         setupUI()
     }
-    
+
     func setupUI() {
         view.addSubview(titleLabel)
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
+
         view.addSubview(button)
         button.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 50).isActive = true
         button.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         button.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
-    
+
     @objc func clickButton() {
         delegate?.sendingColor(color: .orange)
         navigationController?.popViewController(animated: true)
