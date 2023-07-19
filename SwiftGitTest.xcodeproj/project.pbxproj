@@ -10,6 +10,7 @@
 		560A5A78276190E400C59085 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A5A77276190E400C59085 /* SecondViewController.swift */; };
 		56256B352794F8A600C17466 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56256B342794F8A600C17466 /* DateFormatter.swift */; };
 		56256B382794FA4800C17466 /* DataFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56256B372794FA4800C17466 /* DataFormat.swift */; };
+		564C32C12A67938C00044B71 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C32C02A67938C00044B71 /* PopupViewController.swift */; };
 		5651805E276C4201008178D1 /* SendingTextDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651805D276C4201008178D1 /* SendingTextDelegate.swift */; };
 		5663083E276EB584006A1DD4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663083D276EB584006A1DD4 /* Coordinator.swift */; };
 		5663086F276EF7CF006A1DD4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663086E276EF7CF006A1DD4 /* ThirdViewController.swift */; };
@@ -28,6 +29,7 @@
 		560A5A77276190E400C59085 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		56256B342794F8A600C17466 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		56256B372794FA4800C17466 /* DataFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormat.swift; sourceTree = "<group>"; };
+		564C32C02A67938C00044B71 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		5651805D276C4201008178D1 /* SendingTextDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingTextDelegate.swift; sourceTree = "<group>"; };
 		5663083D276EB584006A1DD4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5663086E276EF7CF006A1DD4 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				567AAFC526F23A8000EEC232 /* AppDelegate.swift */,
 				567AAFC726F23A8000EEC232 /* SceneDelegate.swift */,
 				567AAFC926F23A8000EEC232 /* ViewController.swift */,
+				564C32C02A67938C00044B71 /* PopupViewController.swift */,
 				560A5A77276190E400C59085 /* SecondViewController.swift */,
 				5663086E276EF7CF006A1DD4 /* ThirdViewController.swift */,
 				567AAFCE26F23A8000EEC232 /* Assets.xcassets */,
@@ -226,6 +229,7 @@
 				567AAFC826F23A8000EEC232 /* SceneDelegate.swift in Sources */,
 				56AEE53F2816C2ED00137AED /* Cell.swift in Sources */,
 				56A266F726F4295C00689EF2 /* Student.swift in Sources */,
+				564C32C12A67938C00044B71 /* PopupViewController.swift in Sources */,
 				5651805E276C4201008178D1 /* SendingTextDelegate.swift in Sources */,
 				560A5A78276190E400C59085 /* SecondViewController.swift in Sources */,
 				5663083E276EB584006A1DD4 /* Coordinator.swift in Sources */,

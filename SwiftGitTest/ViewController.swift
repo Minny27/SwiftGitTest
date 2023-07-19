@@ -7,13 +7,7 @@
 
 import UIKit
 
-@objc protocol WillDelegate {
-    @objc optional var name: String { set get }
-    @objc func tapButton(_ sender: UIButton)
-    
-}
-
-class ViewController: UIViewController, WillDelegate {
+class ViewController: UIViewController {
     let button: UIButton = {
         let bt = UIButton()
         bt.setTitle("버튼", for: .normal)
@@ -26,8 +20,10 @@ class ViewController: UIViewController, WillDelegate {
         return bt
     }()
     
+    let popupVC = PopupViewController()
+    
     @objc func tapButton(_ sender: UIButton) {
-        print("Button tapped!")
+        navigationController?.pushViewController(popupVC, animated: false)
     }
     
     
@@ -37,6 +33,7 @@ class ViewController: UIViewController, WillDelegate {
         view.backgroundColor = .white
         
         setupUI()
+        setupDelegate()
     }
     
     private func setupUI() {
@@ -47,5 +44,16 @@ class ViewController: UIViewController, WillDelegate {
             button.widthAnchor.constraint(equalToConstant: 100),
             button.heightAnchor.constraint(equalToConstant: 80)
         ])
+    }
+    
+    private func setupDelegate() {
+        popupVC.willDelegate = self
+    }
+}
+
+extension ViewController: WillDelegate {
+    func sendMessage(text: String) {
+        print(text)
+        navigationController?.popViewController(animated: false)
     }
 }
