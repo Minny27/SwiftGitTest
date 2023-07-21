@@ -7,62 +7,53 @@
 
 import UIKit
 
-protocol SendingColorDelegate: AnyObject {
-    func sendingColor(color: UIColor)
-}
-
 class SecondViewController: UIViewController {
-
-    weak var delegate: SendingColorDelegate?
-
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "두 번째 화면"
-        label.font = .boldSystemFont(ofSize: 20)
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
     let button: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(.blue, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 20)
-        button.setTitle(
-            "버튼",
-            for: .normal
-        )
-        button.addTarget(
-            self,
-            action: #selector(clickButton),
-            for: .touchUpInside
-        )
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
+        let bt = UIButton()
+        bt.setTitle("버튼", for: .normal)
+        bt.setTitleColor(.black, for: .normal)
+        bt.backgroundColor = .orange
+        bt.addTarget(self,
+                     action: #selector(tapButton(_:)),
+                     for: .touchUpInside)
+        bt.translatesAutoresizingMaskIntoConstraints = false
+        return bt
     }()
-
+    
+    let popupVC = PopupViewController()
+    
+    @objc func tapButton(_ sender: UIButton) {
+        navigationController?.pushViewController(popupVC, animated: false)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .yellow
-
+        
+        view.backgroundColor = .white
+        
         setupUI()
+        setupDelegate()
     }
-
-    func setupUI() {
-        view.addSubview(titleLabel)
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-
+    
+    private func setupUI() {
         view.addSubview(button)
-        button.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 50).isActive = true
-        button.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        button.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            button.widthAnchor.constraint(equalToConstant: 100),
+            button.heightAnchor.constraint(equalToConstant: 80)
+        ])
     }
+    
+    private func setupDelegate() {
+        popupVC.willDelegate = self
+    }
+}
 
-    @objc func clickButton() {
-        delegate?.sendingColor(color: .orange)
-        navigationController?.popViewController(animated: true)
+extension SecondViewController: WillDelegate {
+    func sendMessage(text: String) {
+        print(text)
+        navigationController?.popViewController(animated: false)
     }
 }

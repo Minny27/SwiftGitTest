@@ -7,53 +7,49 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    let button: UIButton = {
-        let bt = UIButton()
-        bt.setTitle("버튼", for: .normal)
-        bt.setTitleColor(.black, for: .normal)
-        bt.backgroundColor = .orange
-        bt.addTarget(self,
-                     action: #selector(tapButton(_:)),
-                     for: .touchUpInside)
-        bt.translatesAutoresizingMaskIntoConstraints = false
-        return bt
-    }()
-    
-    let popupVC = PopupViewController()
-    
-    @objc func tapButton(_ sender: UIButton) {
-        navigationController?.pushViewController(popupVC, animated: false)
+class Person {
+    var name: String
+    weak var pet: Pet?
+
+    init(name: String) {
+        self.name = name
+        print("\(name) is being initialized.")
     }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .white
-        
-        setupUI()
-        setupDelegate()
-    }
-    
-    private func setupUI() {
-        view.addSubview(button)
-        NSLayoutConstraint.activate([
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            button.widthAnchor.constraint(equalToConstant: 100),
-            button.heightAnchor.constraint(equalToConstant: 80)
-        ])
-    }
-    
-    private func setupDelegate() {
-        popupVC.willDelegate = self
+
+    deinit {
+        print("\(name) is being deallocated.")
     }
 }
 
-extension ViewController: WillDelegate {
-    func sendMessage(text: String) {
-        print(text)
-        navigationController?.popViewController(animated: false)
+class Pet {
+    var name: String
+    var owner: Person?
+
+    init(name: String) {
+        self.name = name
+        print("\(name) is being initialized.")
+    }
+
+    deinit {
+        print("\(name) is being deallocated.")
+    }
+}
+
+class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        createRetainCycle()
+    }
+    
+    func createRetainCycle() {
+        var john: Person? = Person(name: "John")
+        var dog: Pet? = Pet(name: "Buddy")
+
+        john?.pet = dog
+        dog?.owner = john
+
+        john = nil
+        dog = nil
     }
 }

@@ -13,7 +13,6 @@
 		564C32C12A67938C00044B71 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C32C02A67938C00044B71 /* PopupViewController.swift */; };
 		5651805E276C4201008178D1 /* SendingTextDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651805D276C4201008178D1 /* SendingTextDelegate.swift */; };
 		5663083E276EB584006A1DD4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663083D276EB584006A1DD4 /* Coordinator.swift */; };
-		5663086F276EF7CF006A1DD4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663086E276EF7CF006A1DD4 /* ThirdViewController.swift */; };
 		567AAFC626F23A8000EEC232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AAFC526F23A8000EEC232 /* AppDelegate.swift */; };
 		567AAFC826F23A8000EEC232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AAFC726F23A8000EEC232 /* SceneDelegate.swift */; };
 		567AAFCA26F23A8000EEC232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567AAFC926F23A8000EEC232 /* ViewController.swift */; };
@@ -32,7 +31,6 @@
 		564C32C02A67938C00044B71 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		5651805D276C4201008178D1 /* SendingTextDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingTextDelegate.swift; sourceTree = "<group>"; };
 		5663083D276EB584006A1DD4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		5663086E276EF7CF006A1DD4 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		567AAFC226F23A8000EEC232 /* SwiftGitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567AAFC526F23A8000EEC232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		567AAFC726F23A8000EEC232 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 				567AAFC926F23A8000EEC232 /* ViewController.swift */,
 				564C32C02A67938C00044B71 /* PopupViewController.swift */,
 				560A5A77276190E400C59085 /* SecondViewController.swift */,
-				5663086E276EF7CF006A1DD4 /* ThirdViewController.swift */,
 				567AAFCE26F23A8000EEC232 /* Assets.xcassets */,
 				567AAFD026F23A8000EEC232 /* LaunchScreen.storyboard */,
 				567AAFD326F23A8000EEC232 /* Info.plist */,
@@ -225,7 +222,6 @@
 				567AAFCA26F23A8000EEC232 /* ViewController.swift in Sources */,
 				567AAFC626F23A8000EEC232 /* AppDelegate.swift in Sources */,
 				56256B382794FA4800C17466 /* DataFormat.swift in Sources */,
-				5663086F276EF7CF006A1DD4 /* ThirdViewController.swift in Sources */,
 				567AAFC826F23A8000EEC232 /* SceneDelegate.swift in Sources */,
 				56AEE53F2816C2ED00137AED /* Cell.swift in Sources */,
 				56A266F726F4295C00689EF2 /* Student.swift in Sources */,
