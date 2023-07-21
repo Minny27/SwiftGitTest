@@ -7,49 +7,40 @@
 
 import UIKit
 
-class Person {
-    var name: String
-    weak var pet: Pet?
-
-    init(name: String) {
-        self.name = name
-        print("\(name) is being initialized.")
-    }
-
-    deinit {
-        print("\(name) is being deallocated.")
-    }
-}
-
-class Pet {
-    var name: String
-    var owner: Person?
-
-    init(name: String) {
-        self.name = name
-        print("\(name) is being initialized.")
-    }
-
-    deinit {
-        print("\(name) is being deallocated.")
-    }
-}
-
 class ViewController: UIViewController {
+    
+    let button: UIButton = {
+        let bt = UIButton()
+        return bt
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createRetainCycle()
+        
+        view.backgroundColor = .white
+        
+        setupUI()
+//        setupDelegate()
     }
     
-    func createRetainCycle() {
-        var john: Person? = Person(name: "John")
-        var dog: Pet? = Pet(name: "Buddy")
+    private func setupUI() {
+        view.addSubview(button)
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            button.widthAnchor.constraint(equalToConstant: 100),
+            button.heightAnchor.constraint(equalToConstant: 80)
+        ])
+    }
+    
+//    private func setupDelegate() {
+//        popupVC.willDelegate = self
+//    }
+}
 
-        john?.pet = dog
-        dog?.owner = john
-
-        john = nil
-        dog = nil
+extension ViewController: WillDelegate {
+    func sendMessage(text: String) {
+        print(text)
+        navigationController?.popViewController(animated: false)
     }
 }
