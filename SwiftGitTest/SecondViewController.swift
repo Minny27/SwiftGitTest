@@ -1,18 +1,31 @@
 //
-//  ViewController.swift
+//  SecondViewController.swift
 //  SwiftGitTest
 //
-//  Created by SeungMin on 2021/09/15.
+//  Created by SeungMin on 2021/12/09.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class SecondViewController: UIViewController {
     let button: UIButton = {
         let bt = UIButton()
+        bt.setTitle("버튼", for: .normal)
+        bt.setTitleColor(.black, for: .normal)
+        bt.backgroundColor = .orange
+        bt.addTarget(self,
+                     action: #selector(tapButton(_:)),
+                     for: .touchUpInside)
+        bt.translatesAutoresizingMaskIntoConstraints = false
         return bt
     }()
+    
+    let popupVC = PopupViewController()
+    
+    @objc func tapButton(_ sender: UIButton) {
+        navigationController?.pushViewController(popupVC, animated: false)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +33,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         setupUI()
-//        setupDelegate()
+        setupDelegate()
     }
     
     private func setupUI() {
@@ -33,12 +46,12 @@ class ViewController: UIViewController {
         ])
     }
     
-//    private func setupDelegate() {
-//        popupVC.willDelegate = self
-//    }
+    private func setupDelegate() {
+        popupVC.willDelegate = self
+    }
 }
 
-extension ViewController: WillDelegate {
+extension SecondViewController: WillDelegate {
     func sendMessage(text: String) {
         print(text)
         navigationController?.popViewController(animated: false)
